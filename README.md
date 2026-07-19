@@ -6,24 +6,22 @@ nothing expires unnoticed and nothing runs out mid-test.
 
 ## Structure
 
-This is a monorepo with two apps:
-
 ```
 apps/
   web/    marketing site (React + TypeScript + Tailwind v4 + Framer Motion)
-  ios/    mobile app (Expo / React Native + TypeScript)
 ```
 
-Each app has its own README with setup instructions.
+See [apps/web/README.md](apps/web/README.md) for setup instructions.
+
+The iOS product app has moved to its own repo:
+[vetpurse-app](https://github.com/knucklesandwichandpinko/vetpurse-app).
 
 ## Status
 
-Early prototype stage. No backend yet — all data in both apps is local
-mock/demo state and does not persist. See each app's README for what's
-real vs. placeholder.
+Early prototype stage. No backend yet — all data is local mock/demo state
+and does not persist. See the app's README for what's real vs. placeholder.
 
 ## Stack
 
 - **Web:** React, TypeScript, Tailwind CSS v4, Framer Motion, lucide-react
-- **iOS:** Expo, React Native, TypeScript, React Navigation
 - **Planned backend:** Supabase (Postgres + Auth + Realtime)
