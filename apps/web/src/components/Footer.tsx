@@ -1,5 +1,7 @@
+import { Podcast } from 'lucide-react'
 import logoWhite from '../assets/logo-white.png'
 import { openCookieSettings } from '../lib/cookieConsent'
+import { FacebookIcon, InstagramIcon, LinkedinIcon } from './icons/SocialIcons'
 
 const cols = [
   {
@@ -29,6 +31,21 @@ const cols = [
   },
 ]
 
+const legalLinks = [
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms and Conditions', href: '#' },
+  { label: 'Terms of Use', href: '#' },
+  { label: 'Ad Choices', href: '#' },
+  { label: 'Your Privacy Choices', href: '#' },
+]
+
+const socialLinks = [
+  { label: 'Facebook', href: '#', Icon: FacebookIcon },
+  { label: 'Instagram', href: '#', Icon: InstagramIcon },
+  { label: 'LinkedIn', href: '#', Icon: LinkedinIcon },
+  { label: 'Podcasts', href: '#', Icon: Podcast },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-teal-deep text-sage px-8 py-14">
@@ -56,14 +73,45 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <div className="max-w-7xl mx-auto border-t border-teal-line mt-10 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-[12px] text-sage/70">
-        <p>
-          VetPurse is an independent product and is not affiliated with Antech, IDEXX, Zoetis, or any
-          other veterinary diagnostic manufacturer.
+
+      <div className="max-w-7xl mx-auto border-t border-teal-line mt-10 pt-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 mb-6">
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-[12px]">
+            {legalLinks.map((l) => (
+              <a key={l.label} href={l.href} className="hover:text-mint transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </div>
+          <div className="flex items-center gap-4">
+            {socialLinks.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="text-sage hover:text-mint transition-colors"
+              >
+                <s.Icon size={19} />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-[12px] text-sage/70 mb-5">
+          <p>
+            VetPurse is an independent product and is not affiliated with Antech, IDEXX, Zoetis, or any
+            other veterinary diagnostic manufacturer.
+          </p>
+          <button onClick={openCookieSettings} className="shrink-0 underline hover:text-mint transition-colors">
+            Cookie settings
+          </button>
+        </div>
+
+        <p className="text-[11.5px] text-sage/60">
+          © 2026 VetPurse, Inc (An affiliate of Vibe, Incorporated). All rights reserved.
         </p>
-        <button onClick={openCookieSettings} className="shrink-0 underline hover:text-mint transition-colors">
-          Cookie settings
-        </button>
       </div>
     </footer>
   )

@@ -5,6 +5,7 @@ import Features from './components/Features'
 import AISection from './components/AISection'
 import HowItWorks from './components/HowItWorks'
 import DashboardPreview from './components/DashboardPreview'
+import MobileAppPreview from './components/MobileAppPreview'
 import Pricing from './components/Pricing'
 import TrustSection from './components/TrustSection'
 import FAQ from './components/FAQ'
@@ -21,6 +22,7 @@ export default function App() {
       <AISection />
       <HowItWorks />
       <DashboardPreview />
+      <MobileAppPreview />
       <TrustSection />
       <Pricing />
       <FAQ />
