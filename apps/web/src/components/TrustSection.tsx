@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const brands = ['Fujifilm', 'IDEXX', 'Heska', 'Zoetis', 'Scil', 'Eurolyser']
+const brands = ['Antech IHD', 'Zoetis', 'IDEXX']
 
 export default function TrustSection() {
   return (
