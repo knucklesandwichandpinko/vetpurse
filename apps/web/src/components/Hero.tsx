@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { FlaskConical, TrendingDown, Clock, ScanLine, Sparkles } from 'lucide-react'
+import { FlaskConical, TrendingDown, Clock, ScanLine, Sparkles, AlertTriangle } from 'lucide-react'
+import DoodleBackground from './DoodleBackground'
 
 const floatCard = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
@@ -16,11 +17,12 @@ const floatCard = (delay: number) => ({
 export default function Hero() {
   return (
     <header className="relative overflow-hidden bg-teal-deep text-cream pt-24 pb-28 px-8">
+      <DoodleBackground />
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(circle at 78% 15%, rgba(111,224,197,0.16), transparent 55%)' }}
+        style={{ background: 'radial-gradient(circle at 78% 15%, rgba(69,196,255,0.16), transparent 55%)' }}
       />
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +48,7 @@ export default function Hero() {
           className="text-lg text-sage max-w-xl mx-auto mb-9"
         >
           VetPurse tracks every lot, predicts when you'll run out, and tells you which one
-          to use first — across every analyzer brand in your lab.
+          to use first — across reagents and consumables from Antech, IDEXX, and Zoetis.
         </motion.p>
 
         <motion.div
@@ -55,38 +57,47 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex gap-3 justify-center mb-20"
         >
-          <a href="#pricing" className="px-7 py-3.5 rounded-full bg-mint text-ink font-bold text-[15px] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(111,224,197,0.3)] transition-all">
-            Try it free
+          <a href="#demo" className="px-7 py-3.5 rounded-full bg-mint text-ink font-bold text-[15px] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(69,196,255,0.3)] transition-all">
+            Try the Demo
           </a>
           <a href="#how" className="px-7 py-3.5 rounded-full border border-cream/25 text-cream text-[15px] hover:bg-cream/8 transition-colors">
-            See how it works
+            See How It Works
           </a>
         </motion.div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto hidden md:flex justify-between items-start gap-4 px-4">
-        <motion.div {...floatCard(0.5)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-52">
-          <ScanLine size={18} className="text-mint mb-2" />
-          <p className="text-[13px] font-semibold">HT5 Chemistry Pack</p>
-          <p className="text-[12px] text-sage">Lot CHM-8823 · 6 left</p>
+      <div className="relative z-10 max-w-7xl mx-auto hidden md:flex justify-center items-start gap-6 px-4">
+        <motion.div {...floatCard(0.5)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-60">
+          <div className="flex items-center justify-between mb-2">
+            <ScanLine size={18} className="text-mint" />
+            <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-mint/15 text-mint">Critical</span>
+          </div>
+          <p className="text-[13px] font-semibold">Chemistry Reagent Pack</p>
+          <p className="text-[12px] text-sage">Lot CHM-8823 · 6 remaining</p>
         </motion.div>
 
-        <motion.div {...floatCard(0.8)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-52 mt-10">
-          <Clock size={18} className="text-mint mb-2" />
-          <p className="text-[13px] font-semibold">3 lots expiring</p>
-          <p className="text-[12px] text-sage">Within the next 14 days</p>
+        <motion.div {...floatCard(0.8)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-60 mt-10">
+          <div className="flex items-center justify-between mb-2">
+            <Clock size={18} className="text-mint" />
+            <AlertTriangle size={13} className="text-mint/70" />
+          </div>
+          <p className="text-[13px] font-semibold">Expiration alert</p>
+          <p className="text-[12px] text-sage">3 lots expiring within 14 days</p>
         </motion.div>
 
-        <motion.div {...floatCard(0.65)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-52">
+        <motion.div {...floatCard(0.65)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-60">
           <TrendingDown size={18} className="text-mint mb-2" />
-          <p className="text-[13px] font-semibold">18 days remaining</p>
-          <p className="text-[12px] text-sage">Catalyst slides, current usage</p>
+          <p className="text-[13px] font-semibold">Consumable stock</p>
+          <p className="text-[12px] text-sage mb-2">18 days remaining based on current usage</p>
+          <div className="h-1.5 rounded-full bg-teal-line overflow-hidden">
+            <div className="h-full w-3/5 rounded-full bg-mint" />
+          </div>
         </motion.div>
 
-        <motion.div {...floatCard(0.95)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-52 mt-10">
+        <motion.div {...floatCard(0.95)} className="bg-teal-mid border border-teal-line rounded-2xl p-4 w-60 mt-10">
           <Sparkles size={18} className="text-mint mb-2" />
           <p className="text-[13px] font-semibold">Reorder suggested</p>
-          <p className="text-[12px] text-sage">Element i+ Lyte Cartridge</p>
+          <p className="text-[12px] text-sage">Electrolyte cartridges</p>
         </motion.div>
       </div>
     </header>

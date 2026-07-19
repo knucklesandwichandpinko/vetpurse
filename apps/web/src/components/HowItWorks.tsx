@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 import { ScanBarcode, Activity, Sparkles } from 'lucide-react'
 
 const steps = [
-  { icon: ScanBarcode, title: 'Scan', sub: 'Every new lot gets registered once with expiration and quantity.' },
-  { icon: Activity, title: 'Track', sub: 'Stock updates automatically as reagents are used, no spreadsheets.' },
-  { icon: Sparkles, title: 'Predict', sub: 'Reorder and expiration alerts arrive before they\u2019re urgent.' },
+  { icon: ScanBarcode, title: 'Scan', sub: 'Every new product lot is registered once with its manufacturer, expiration date, and quantity.' },
+  { icon: Activity, title: 'Track', sub: 'Stock levels update as reagents and consumables are received, opened, used, adjusted, or discarded.' },
+  { icon: Sparkles, title: 'Predict', sub: 'Reorder and expiration alerts appear before the situation becomes urgent.' },
 ]
 
 export default function HowItWorks() {
@@ -19,10 +19,10 @@ export default function HowItWorks() {
       >
         <span className="text-[13px] text-mint uppercase tracking-wider font-bold block mb-2.5">The loop</span>
         <h2 className="text-3xl font-bold tracking-tight mb-3">How it works</h2>
-        <p className="text-sage text-[15px]">Three steps, repeated every time a reagent moves.</p>
+        <p className="text-sage text-[15px]">Three steps, repeated every time a reagent or consumable moves.</p>
       </motion.div>
 
-      <div className="max-w-3xl mx-auto relative grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-0">
+      <div className="max-w-4xl mx-auto relative grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-0">
         <div className="hidden sm:block absolute top-[26px] left-[16.6%] right-[16.6%] h-px bg-teal-line">
           <motion.div
             initial={{ width: '0%' }}

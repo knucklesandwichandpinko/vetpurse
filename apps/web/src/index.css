@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Calibri", "Carlito", "Segoe UI", sans-serif;
-  --color-teal-deep: #153230;
-  --color-teal-mid: #1e433f;
-  --color-teal-line: #2c5851;
-  --color-mint: #6fe0c5;
-  --color-mint-dim: #3f8f7d;
-  --color-cream: #f6f4ee;
-  --color-sage: #8fa69e;
-  --color-ink: #0e1e1c;
+  --font-sans: "Montserrat", "Segoe UI", sans-serif;
+  --font-serif: "Crimson Pro", Georgia, serif;
+  --color-teal-deep: #10141b;
+  --color-teal-mid: #171d26;
+  --color-teal-line: #2a323d;
+  --color-mint: #45c4ff;
+  --color-mint-dim: #0f8fd6;
+  --color-cream: #edf1f5;
+  --color-sage: #8a96a3;
+  --color-ink: #07090c;
 }
 
 html {
@@ -17,6 +18,25 @@ html {
 }
 
 body {
-  background: var(--color-cream);
-  color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+}
+
+@keyframes doodle-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-480px, -480px, 0); }
+}
+
+.doodle-drift {
+  animation: doodle-drift 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doodle-drift {
+    animation: none;
+  }
 }

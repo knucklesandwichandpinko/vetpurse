@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion'
 import { Sparkles, TrendingUp, Target, Recycle, LineChart } from 'lucide-react'
+import AIAssistantDemo from './AIAssistantDemo'
 
 const capabilities = [
   { icon: TrendingUp, text: 'Predict shortages before they happen' },
   { icon: Target, text: 'Recommend reorder quantities, not just reorder dates' },
   { icon: Recycle, text: 'Identify waste patterns across lots and shifts' },
-  { icon: LineChart, text: 'Analyze consumption trends by analyzer and test type' },
+  { icon: LineChart, text: 'Analyze reagent and consumable usage trends' },
 ]
 
 export default function AISection() {
   return (
     <section id="ai" className="py-20 px-8 bg-teal-mid text-cream">
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center mb-16">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -25,7 +26,7 @@ export default function AISection() {
           <p className="text-sage text-[15px] leading-relaxed">
             VetPurse is built to get smarter with every lot you scan. As usage data
             accumulates, the assistant moves from reporting what happened to
-            recommending what to do next \u2014 built for where veterinary diagnostics
+            recommending what to do next — built for where veterinary diagnostics
             is headed, not just where it is today.
           </p>
         </motion.div>
@@ -46,6 +47,8 @@ export default function AISection() {
           ))}
         </div>
       </div>
+
+      <AIAssistantDemo />
     </section>
   )
 }

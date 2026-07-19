@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const brands = ['Antech IHD', 'Zoetis', 'IDEXX']
+const brands = ['Antech', 'IDEXX', 'Zoetis']
 
 export default function TrustSection() {
   return (
@@ -11,18 +11,28 @@ export default function TrustSection() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.5 }}
       >
-        <span className="text-[13px] text-sage uppercase tracking-wider block mb-5">
-          Built for veterinary diagnostic teams
-        </span>
-        <p className="text-[13px] text-sage mb-5">Designed for workflows using equipment from:</p>
-        <div className="flex flex-wrap gap-x-7 gap-y-2 justify-center text-[14px] font-semibold text-teal-deep opacity-75">
+        <h2 className="text-2xl font-bold tracking-tight mb-2.5">Built for veterinary diagnostic teams</h2>
+        <p className="text-[14px] text-sage mb-8 max-w-md mx-auto">
+          Track reagents and consumables from the manufacturers your laboratory already uses.
+        </p>
+
+        <div className="flex flex-wrap gap-4 justify-center max-w-2xl mx-auto mb-6">
           {brands.map((b) => (
-            <span key={b}>{b}</span>
+            <div
+              key={b}
+              className="px-8 py-5 rounded-2xl bg-teal-deep border border-teal-line shadow-[0_8px_20px_rgba(0,0,0,0.3)] text-[16px] font-bold text-mint"
+            >
+              {b}
+            </div>
           ))}
         </div>
-        <p className="text-[11px] text-sage/70 mt-6 max-w-md mx-auto">
-          VetPurse is an independent product. Brand names are used to describe
-          compatibility only and do not imply partnership or endorsement.
+
+        <p className="text-[13.5px] text-sage max-w-md mx-auto">
+          VetPurse brings reagents and consumables from multiple manufacturers into one inventory workflow.
+        </p>
+        <p className="text-[11px] text-sage/70 mt-4 max-w-md mx-auto">
+          VetPurse is an independent product. Manufacturer names are used only to describe
+          supported inventory tracking and do not imply partnership, affiliation, certification, or endorsement.
         </p>
       </motion.div>
     </section>
